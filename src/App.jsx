@@ -12,17 +12,14 @@ export const tabs = [
 
 export const App = () => {
   const [activeTabId, setActiveTabId] = useState(tabs[0]?.id || '');
-  const [content, setContent] = useState(tabs[0]?.content || '');
 
   const handleTabSelected = tabId => {
     const selectedTab = tabs.find(tab => tab.id === tabId);
 
     if (selectedTab) {
       setActiveTabId(tabId);
-      setContent(selectedTab.content);
     } else {
       setActiveTabId(tabs[0]?.id || '');
-      setContent(tabs[0]?.content || '');
     }
   };
 

@@ -1,9 +1,4 @@
-export const Tabs = ({
-  tabs,
-  activeTabId,
-  onTabSelected,
-  onActiveTabTitle,
-}) => {
+export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
   const isValidTabId = tabs.some(tab => tab.id === activeTabId);
   const resolvedTabId = isValidTabId ? activeTabId : tabs[0]?.id;
 
@@ -26,7 +21,6 @@ export const Tabs = ({
                   event.preventDefault();
                   if (resolvedTabId !== tab.id) {
                     onTabSelected(tab.id);
-                    onActiveTabTitle(tab.title);
                   }
                 }}
               >
